@@ -1,6 +1,6 @@
 import { useMemo, useState, type FormEvent, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, BookOpen, Bus, CalendarDays, CheckCircle2, Clock, Download, Dumbbell, HeartPulse, Library, Microscope, Phone, ShieldCheck, Users, X } from "lucide-react";
+import { ArrowRight, BookOpen, Bus, CalendarDays, CheckCircle2, Clock, Download, Dumbbell, HeartPulse, Library, Mail, Microscope, Phone, ShieldCheck, Users } from "lucide-react";
 import { media, staffImages } from "@/lib/assets";
 import { classes, fees, holidays, houses, school, staff } from "@/lib/school-data";
 import { CTA, PageHero, SectionHead } from "./site";
