@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: "Manrope", sans-serif;
-  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Playfair Display", serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -31,16 +31,17 @@
   --color-crimson: var(--crimson);
   --color-soft: var(--soft);
   --color-glass: var(--glass);
-  --shadow-soft: 0 24px 60px -34px color-mix(in oklab, var(--brand) 38%, transparent);
+  --shadow-soft: 0 18px 50px -28px color-mix(in oklab, var(--brand) 30%, transparent);
+  --shadow-menu: 0 22px 45px -20px color-mix(in oklab, var(--brand) 35%, transparent);
   --animate-fade-in: fade-in .6s ease-out both;
   --animate-slide-down: slide-down .25s ease-out both;
 }
 
 :root {
   --radius: .625rem;
-  --background: oklch(.972 .012 247);
-  --foreground: oklch(.31 .055 260);
-  --card: oklch(.99 .004 247 / .78);
+  --background: oklch(.985 .004 90);
+  --foreground: oklch(.25 .035 255);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(.31 .055 260);
   --popover: oklch(.995 .003 247);
   --popover-foreground: oklch(.25 .06 260);
@@ -56,12 +57,12 @@
   --border: oklch(.88 .025 246);
   --input: oklch(.91 .02 247);
   --ring: oklch(.56 .13 255);
-  --brand: oklch(.34 .12 258);
+  --brand: oklch(.245 .075 255);
   --brand-foreground: oklch(.99 .003 247);
-  --gold: oklch(.68 .13 82);
+  --gold: oklch(.76 .15 82);
   --crimson: oklch(.5 .17 27);
-  --soft: oklch(.93 .03 245);
-  --glass: oklch(.995 .004 247 / .72);
+  --soft: oklch(.955 .015 245);
+  --glass: oklch(1 0 0 / .9);
 }
 
 @keyframes fade-in { from {opacity:0;transform:translateY(12px)} to {opacity:1;transform:none} }
@@ -76,16 +77,17 @@
   img { max-width:100%; }
 }
 
-@utility nav-link { @apply rounded-md px-2.5 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-brand; }
+@utility nav-link { @apply border-b-2 border-transparent px-2.5 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-brand; }
+@utility nav-active { @apply border-gold text-brand; }
 @utility mobile-link { @apply block border-b border-border py-3.5 text-base font-semibold text-foreground; }
-@utility btn-primary { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-brand px-5 py-3 text-sm font-bold text-brand-foreground shadow-soft transition-transform hover:-translate-y-0.5; }
-@utility btn-secondary { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-brand/20 bg-card px-5 py-3 text-sm font-bold text-brand transition-colors hover:bg-accent; }
+@utility btn-primary { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-brand px-5 py-3 text-sm font-bold text-brand-foreground shadow-soft transition-transform hover:-translate-y-0.5; }
+@utility btn-secondary { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-brand/20 bg-card px-5 py-3 text-sm font-bold text-brand transition-colors hover:bg-accent; }
 @utility icon-button { @apply grid size-11 shrink-0 place-items-center rounded-lg text-brand transition-colors hover:bg-accent; }
 @utility eyebrow { @apply text-xs font-extrabold uppercase tracking-[.22em] text-gold; }
 @utility footer-title { @apply font-display text-sm font-bold uppercase tracking-[.15em] text-brand-foreground; }
 @utility section-pad { @apply px-5 py-16 sm:py-20; }
-@utility surface-card { @apply rounded-xl border border-glass bg-glass shadow-soft backdrop-blur-md; }
-@utility page-hero { background:linear-gradient(145deg,var(--background),var(--soft)); }
+@utility surface-card { @apply rounded-md border border-border bg-card shadow-soft; }
+@utility bg-hero-overlay { background:linear-gradient(90deg,var(--brand) 0%,color-mix(in oklab,var(--brand) 82%,transparent) 58%,color-mix(in oklab,var(--brand) 25%,transparent) 100%); }
 @utility field { @apply min-h-12 w-full rounded-lg border border-input bg-card px-3.5 text-sm outline-none transition-shadow focus:ring-2 focus:ring-ring/30; }
 @utility house-ganga { background-color:oklch(.58 .14 248); }
 @utility house-yamuna { background-color:oklch(.62 .13 173); }
